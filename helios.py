@@ -135,7 +135,6 @@ def __virtual__():
 
 def kwargs_to_string(method, kwargs):
     master = __salt__['config.get']('helios:master') or 'http://localhost:5801'
-    log.trace('Master: {master}'.format(master=master))
     domains = __salt__['config.get']('helios:domains')
     srv_name = __salt__['config.get']('helios:srv_name')
     username = __salt__['config.get']('helios:username')
@@ -222,7 +221,7 @@ def history(job_id, **kwargs):
     arg_string = job_id
     return call('history', arg_string, kwargs)
 
-def jobs(pattern, **kwargs):
+def jobs(pattern='', **kwargs):
     arg_string = pattern
     return call('jobs', arg_string, kwargs)
 
