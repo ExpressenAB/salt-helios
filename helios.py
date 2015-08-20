@@ -134,7 +134,7 @@ def __virtual__():
     return __virtualname__
 
 def kwargs_to_string(method, kwargs):
-    master = __salt__['config.get']('helios:master')
+    master = __salt__['config.get']('helios:master') or 'http://localhost:5801'
     log.trace('Master: {master}'.format(master=master))
     domains = __salt__['config.get']('helios:domains')
     srv_name = __salt__['config.get']('helios:srv_name')
