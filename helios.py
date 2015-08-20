@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 
 import json
-import re
 import salt
-import salt.exceptions
-from functools import wraps
+import logging
 
 from argument_handler import ArgumentHandler
 
 __virtualname__ = 'helios'
+log = logging.getLogger(__name__)
 
 valid_kwargs = {
     'global': [
@@ -129,6 +128,7 @@ def __virtual__():
     # each of them are available in the standard PATH to prevent breakage
     for cmd in required_cmds:
         if not salt.utils.which(cmd):
+            log.trace('Could not find helios on system')
             return False
 
     return __virtualname__
