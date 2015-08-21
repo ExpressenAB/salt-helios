@@ -211,7 +211,7 @@ def inspect(job_id, **kwargs):
         :param job_id:                  name:version[:hash] of the job
     '''
     arg_string = job_id
-    return call('create', arg_string, kwargs)
+    return call('inspect', arg_string, kwargs)
 
 # Hosts must be a list
 # TODO - How does this work in orchestrate?
