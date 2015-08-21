@@ -339,7 +339,7 @@ def create_deployment_group(name, host_selectors = [], **kwargs):
     for host_selector in host_selectors:
         k = host_selector.keys()[0]
         arg_string += ' ' + k
-        if host_selector[k][1:] == '!'
+        if host_selector[k][1:] == '!':
             arg_string += '!'
             host_selector[k] = host_selector[k][1:]
 
