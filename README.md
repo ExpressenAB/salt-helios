@@ -2,6 +2,7 @@
 A SaltStack Execution Module for Helios
 
 ## helios.create_job(job_id, image, args, **kwargs):
+
 ## helios.remove_job(job_id, **kwargs):
 ## helios.inspect_job(job_id, **kwargs):
 ## helios.deploy_job(job_id, hosts, **kwargs):
@@ -9,9 +10,9 @@ A SaltStack Execution Module for Helios
 ## helios.start_job(job_id, hosts, **kwargs):
 ## helios.stop_job(job_id, hosts, **kwargs):
 ## helios.history(job_id, **kwargs):
-## helios.list_jobs(pattern, **kwargs):
-## helios.list_hosts(pattern, **kwargs):
-## helios.list_masters(**kwargs):
+## helios.jobs(pattern, **kwargs):
+## helios.hosts(pattern, **kwargs):
+## helios.masters(**kwargs):
 ## helios.status(**kwargs):
 ## helios.watch(job_id, hosts, **kwargs):
 ## helios.register(host, id, **kwargs):
